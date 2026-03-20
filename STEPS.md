@@ -5,9 +5,9 @@
 - [x] Step 1 — プロジェクト初期化 (`go mod init`, `main.go`)
 - [x] Step 2 — REPL (対話ループ)
 - [x] Step 3 — Tokenizer (字句解析)
-- [ ] Step 4 — Parser (構文解析)
-- [ ] Step 5 — Catalog (テーブル定義のメモリ管理)
-- [ ] Step 6 — ファイルへの永続化
+- [x] Step 4 — Parser (構文解析)
+- [x] Step 5 — Catalog (テーブル定義のメモリ管理)
+- [x] Step 6 — ファイルへの永続化
 
 ## Phase 2以降 (ロードマップ)
 
