@@ -8,6 +8,7 @@ import (
 
 func main(){
 	scanner := bufio.NewScanner(os.Stdin)
+	catalog := &Catalog{Tables: make(map[string]*CreateTableStmt)}
 
 	for {
 		fmt.Print("kohanDB> ")
@@ -21,7 +22,12 @@ func main(){
 			if err != nil {
 				fmt.Println("Error:", err)
 			} else {
-				fmt.Println(stmt)
+				err = catalog.CreateTable(stmt)
+				if err != nil {
+					fmt.Println("Error:", err)
+				} else {
+					fmt.Println("Table created.")
+				}
 			}
 		}
 	}
