@@ -17,7 +17,12 @@ func main(){
 			break
 		} else {
 			tokens := tokenize(input_text)
-			fmt.Println(tokens)
+			stmt, err := parse(tokens)
+			if err != nil {
+				fmt.Println("Error:", err)
+			} else {
+				fmt.Println(stmt)
+			}
 		}
 	}
 }
