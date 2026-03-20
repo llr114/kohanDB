@@ -16,7 +16,8 @@ func main(){
 		if input_text == ".exit" {
 			break
 		} else {
-			fmt.Println(input_text)
+			tokens := tokenize(input_text)
+			fmt.Println(tokens)
 		}
 	}
 }
