@@ -23,12 +23,17 @@ func main(){
 			if err != nil {
 				fmt.Println("Error:", err)
 			} else {
-				err = catalog.CreateTable(stmt)
-				if err != nil {
-					fmt.Println("Error:", err)
-				} else {
-					catalog.SaveToFile("kohan.db")
-					fmt.Println("Table created.")
+				switch s := stmt.(type) {
+					case *CreateTableStmt:
+						err = catalog.CreateTable(s)
+						if err != nil {
+							fmt.Println("Error:", err)
+						} else {
+							catalog.SaveToFile("kohan.db")
+							fmt.Println("Table created.")
+						}
+					case *InsertStmt:
+						fmt.Println(s)
 				}
 			}
 		}
